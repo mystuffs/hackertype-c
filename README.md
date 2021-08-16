@@ -17,10 +17,8 @@ make install
 
 ```c
 #define VARIENT {3, 5, 7}
-#define VARIENT_S 3
 ```
 Set VARIENT(L#6) to the cyclic array of size of blocks of text outputted after each keystroke
-Set VARIENT_S to the size of VARIENT array
 
 
 

@@ -4,7 +4,6 @@
 #include <unistd.h>
 
 #define VARIENT {3, 5, 7}
-#define VARIENT_S 3
 
 int getch(void) {
   struct termios oldattr, newattr;
@@ -24,7 +23,8 @@ int main(int argc, char **argv){
     exit(1);
   }
   FILE *fp = fopen(argv[1], "r");
-  int m[VARIENT_S] = VARIENT;
+  int m[] = VARIENT;
+  int vs = sizeof(m)/sizeof(*(m));
   int mi, i, r;
   if(fp!=NULL){
     while(!feof(fp)) {
@@ -37,7 +37,7 @@ int main(int argc, char **argv){
         r--;
       }
       mi++;
-      if(mi==VARIENT_S) mi=0;
+      if(mi==vs) mi=0;
       r=m[mi];
     }
   }
