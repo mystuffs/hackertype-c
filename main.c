@@ -23,22 +23,18 @@ int main(int argc, char **argv){
     exit(1);
   }
   FILE *fp = fopen(argv[1], "r");
-  int m[] = VARIENT;
-  int vs = sizeof(m)/sizeof(*(m));
-  int mi, i, r;
+  int v[] = VARIENT;
+  int vs = sizeof(v)/sizeof(*(v)), vi;
   if(fp!=NULL){
     while(!feof(fp)) {
       getch();
-      while(r!=0){
-        i++;
+      for(int i=0; i<v[vi]; i++){
         char c = fgetc(fp);
         if (c==EOF) break;
         putchar(c);
-        r--;
       }
-      mi++;
-      if(mi==vs) mi=0;
-      r=m[mi];
+      vi++;
+      if(vi==vs) vi=0;
     }
   }
   else {
