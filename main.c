@@ -22,6 +22,7 @@ int main(int argc, char **argv){
     fputs("No file provided\n", stderr);
     exit(1);
   }
+
   FILE *fp = fopen(argv[1], "r");
   int v[] = VARIENT;
   int vs = sizeof(v)/sizeof(*(v)), vi;

@@ -24,6 +24,6 @@ Set VARIENT(L#6) to the cyclic array of size of blocks of text outputted after e
 
 ### Usage
 ```
-./hackertype words.txt
+./hackertype main.c
 ```
 
