@@ -5,7 +5,7 @@
 
 #define VARIENT {3, 5, 7}
 
-int getch(void) {
+unsigned int getch(void) {
   struct termios oldattr, newattr;
   int ch;
   tcgetattr(STDIN_FILENO, &oldattr);
@@ -24,19 +24,20 @@ int main(int argc, char **argv){
   }
 
   FILE *fp = fopen(argv[1], "r");
-  int v[] = VARIENT;
-  int vs = sizeof(v)/sizeof(*(v)), vi;
   if(fp!=NULL){
-    while(!feof(fp)) {
+    unsigned int v[] = VARIENT;
+    unsigned int vs = sizeof(v)/sizeof(*(v)), vi;
+    char c;
+    while( c!=EOF ) {
       getch();
-      for(int i=0; i<v[vi]; i++){
-        char c = fgetc(fp);
-        if (c==EOF) break;
+      for(unsigned int i=0; i<v[vi]; i++){
+        c=fgetc(fp);
         putchar(c);
       }
       vi++;
       if(vi==vs) vi=0;
     }
+    fclose(fp);
   }
   else {
     puts("Unable to open file\n");
