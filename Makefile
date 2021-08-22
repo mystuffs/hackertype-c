@@ -2,7 +2,7 @@ include config.mk
 BIN=hackertype
 
 all:
-	$(CC) main.c -o $(BIN)
+	$(CC) main.c -O3 -o $(BIN)
 
 
 install:
