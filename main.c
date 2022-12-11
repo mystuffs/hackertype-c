@@ -26,7 +26,7 @@ int main(int argc, char **argv){
   FILE *fp = fopen(argv[1], "r");
   if(fp!=NULL){
     unsigned int v[] = VARIENT;
-    unsigned int vs = sizeof(v)/sizeof(*(v)), vi;
+    unsigned int vs = sizeof(v)/sizeof(*(v)), vi = 0;
     char c;
     while( c!=EOF ) {
       getch();
